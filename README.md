@@ -1,37 +1,37 @@
-# Hapi Mongoose Boilerplate v1.1.0.
+# Hapi-Firebase-Boilerplate v1.2.0.
 
-![hapi](https://myhappyagency.com/blog/wp-content/uploads/2019/12/Copie-de-Design-sans-titre.png)
+![Hapi-Firebase-Boilerplate](https://myhappyagency.com/blog/wp-content/uploads/2019/12/node_firebase_hapi.png)
 
-Hapi boilerplate made with Mongoose, Bcrypt & Nodemon.
+Hapi Firebase boilerplate.
 Build powerful, scalable applications, with minimal overhead and full out-of-the-box functionality - your code, your way.
 
 ## Installation
 
-This template works with env variables and a MONGODB_URI.
+This template works with env variables:
+
+```
+VUE_APP_API_KEY=
+VUE_APP_AUTH_DOMAIN=
+VUE_APP_DB_URL=
+VUE_APP_PROJECT_ID=
+VUE_APP_STORAGE_BUCKET=
+VUE_APP_MESSAGING_SENDER_ID=
+VUE_APP_APP_ID=
+```
 
 Install dependencies:
 ```
 npm i
 ```
-Create an .env file at project root & fill a valid MONGODB_URI:
-```
-MONGODB_URI=
-```
-Start with nodemon:
+Serve project:
 ```
 npm run serve
-```
-Without nodemon:
-```
-npm run start
 ```
 
 ## Built With
 
 * [Hapi](https://github.com/hapijs/hapi) - The Simple, Secure Framework Developers Trust
-* [Mongoose](https://mongoosejs.com/) - Elegant MongoDB object modeling for Node.js
-* [bcrypt](https://www.npmjs.com/package/bcrypt) - A library to help you hash passwords.
-* [nodemon](https://www.npmjs.com/package/nodemon) - nodemon is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.
+* [Firebase](https://www.npmjs.com/package/firebase) - Firebase provides the tools and infrastructure you need to develop, grow, and earn money from your app. This package supports web (browser), mobile-web, and server (Node.js) clients.
 
 ## Versioning
 
