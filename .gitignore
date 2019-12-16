@@ -13,6 +13,9 @@ logs
 results
 tmp
 
+# Firebase account key
+serviceAccountKey.json
+
 # Optional npm cache directory
 .npm
 
