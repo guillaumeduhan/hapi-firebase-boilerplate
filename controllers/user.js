@@ -5,17 +5,20 @@
 'use strict'
 
 const admin = require('firebase-admin')
+const chalk = require('chalk')
 
-exports.createUser = (email, password) => {
-  admin.auth().createUser({
+exports.createUser = async (email, password) => {
+  return admin.auth().createUser({
     email: email,
     password: password,
   })
   .then(function(userRecord) {
     // See the UserRecord reference doc for the contents of userRecord.
-    console.log('👍 Successfully created new user:', userRecord.uid)
+    console.log(chalk.bold(chalk.blue('👍 Successfully created new user:', userRecord.email)))
+    return userRecord
   })
   .catch(function(error) {
-    console.log('👿 Error creating new user:', error)
+    console.log(chalk.bold(chalk.red('👿 ' + error)))
+    return false
   })
 }

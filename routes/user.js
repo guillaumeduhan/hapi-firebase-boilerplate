@@ -10,8 +10,9 @@ module.exports = [
   {
     method: 'POST',
     path: '/user/signup',
-    handler(req) {
-      return userController.createUser(req.query.email, req.query.password)
+    handler: async (req) => {
+      const newUser = await userController.createUser(req.query.email, req.query.password)
+      return newUser
     },
   },
 ]
