@@ -27,7 +27,7 @@ const init = async () => {
         host: 'localhost',
     })
 
-    resources.initFirebase()
+    resources.firebase()
 
     await server.register(require('./config/router'))
     await server.register({

@@ -6,9 +6,8 @@
 
 const admin = require('firebase-admin')
 const serviceAccount = require('../serviceAccountKey.json')
-const chalk = require('chalk')
 
-exports.initFirebase = () => {
+exports.firebase = () => {
   /*
      * Init your firebase app
      */
@@ -16,5 +15,4 @@ exports.initFirebase = () => {
     credential: admin.credential.cert(serviceAccount),
     databaseURL: 'https://test-f9e7a.firebaseio.com',
   })
-  console.log(chalk.bold(chalk.green('✅ Firebase')))
 }

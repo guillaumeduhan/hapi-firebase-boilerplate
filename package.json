@@ -1,6 +1,6 @@
 {
   "name": "Hapi-Firebase-Boilerplate",
-  "version": "1.1.0",
+  "version": "1.3.0",
   "description": "Hapi-Firebase-Boilerplate by Guillaume Duhan, 2019.",
   "main": "server.js",
   "scripts": {

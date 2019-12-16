@@ -2,16 +2,20 @@
  * User controller
  */
 
-exports.signupUser = async (email, password) => {
-  console.log(email, password)
-    // const user = await User.findOne({ email, password })
-    // if (user) {
-    //     throw new Error('👿 User already exists')
-    // }
-    // const newUser = await new User({
-    //     email,
-    //     password,
-    // }).save()
-    // console.log(`👍 New user added: ${newUser.email}`)
-    // return newUser
+'use strict'
+
+const admin = require('firebase-admin')
+
+exports.createUser = (email, password) => {
+  admin.auth().createUser({
+    email: email,
+    password: password,
+  })
+  .then(function(userRecord) {
+    // See the UserRecord reference doc for the contents of userRecord.
+    console.log('👍 Successfully created new user:', userRecord.uid)
+  })
+  .catch(function(error) {
+    console.log('👿 Error creating new user:', error)
+  })
 }

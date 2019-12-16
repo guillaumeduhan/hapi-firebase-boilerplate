@@ -11,7 +11,7 @@ module.exports = [
     method: 'POST',
     path: '/user/signup',
     handler(req) {
-      return userController.signupUser(req.query.email, req.query.password)
+      return userController.createUser(req.query.email, req.query.password)
     },
   },
 ]
