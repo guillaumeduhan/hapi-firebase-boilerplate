@@ -7,17 +7,7 @@ Build powerful, scalable applications, with minimal overhead and full out-of-the
 
 ## Installation
 
-This template works with env variables:
-
-```
-VUE_APP_API_KEY=
-VUE_APP_AUTH_DOMAIN=
-VUE_APP_DB_URL=
-VUE_APP_PROJECT_ID=
-VUE_APP_STORAGE_BUCKET=
-VUE_APP_MESSAGING_SENDER_ID=
-VUE_APP_APP_ID=
-```
+Follow @Hackernoon quick tutorial first: [[Nodejs] Setup Firebase in 4 step](https://hackernoon.com/nodejs-setup-firebase-in-4-step-tutorial-example-easy-beginner-service-account-key-json-node-server-d61e803d6cc8)
 
 Install dependencies:
 ```
