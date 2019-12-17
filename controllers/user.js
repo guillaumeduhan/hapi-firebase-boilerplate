@@ -7,10 +7,10 @@
 const admin = require('firebase-admin')
 const chalk = require('chalk')
 
-exports.createUser = async (email, password) => {
+exports.createUser = async (payload) => {
   return admin.auth().createUser({
-    email: email,
-    password: password,
+    email: payload.email,
+    password: payload.password,
   })
   .then(function(userRecord) {
     // See the UserRecord reference doc for the contents of userRecord.
@@ -23,10 +23,10 @@ exports.createUser = async (email, password) => {
   })
 }
 
-exports.updateUser = async (uid, email, password) => {
+exports.updateUser = async (uid, payload) => {
   return admin.auth().updateUser(uid, {
-    email: email,
-    password: password,
+    email: payload.email,
+    password: payload.password,
   })
   .then(function(userRecord) {
     // See the UserRecord reference doc for the contents of userRecord.
