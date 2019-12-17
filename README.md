@@ -7,7 +7,7 @@ Build powerful, scalable applications, with minimal overhead and full out-of-the
 
 ## Installation
 
-<a href="https://hackernoon.com/nodejs-setup-firebase-in-4-step-tutorial-example-easy-beginner-service-account-key-json-node-server-d61e803d6cc8" target="_blank">Nodejs, Setup Firebase in 4 step</a>
+<a href="https://hackernoon.com/nodejs-setup-firebase-in-4-step-tutorial-example-easy-beginner-service-account-key-json-node-server-d61e803d6cc8" target="blank">Nodejs, Setup Firebase in 4 step</a>
 
 Install dependencies:
 ```
