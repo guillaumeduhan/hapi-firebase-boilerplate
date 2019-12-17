@@ -5,6 +5,9 @@
 'use strict'
 
 const admin = require('firebase-admin')
+/**
+ * Service key from Firebase required.
+ */
 const serviceAccount = require('../serviceAccountKey.json')
 
 exports.firebase = () => {
