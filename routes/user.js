@@ -15,4 +15,12 @@ module.exports = [
       return newUser
     },
   },
+  {
+    method: 'PUT',
+    path: '/user/update',
+    handler: async (req) => {
+      const user = await userController.updateUser(req.query.uid, req.query.email, req.query.password)
+      return user
+    },
+  },
 ]

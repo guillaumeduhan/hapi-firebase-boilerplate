@@ -42,6 +42,7 @@ const init = async () => {
     })
     await server.start()
     .then(() => console.log(chalk.bold(chalk.green('✅ Server ', chalk.yellow(server.info.uri)))))
+    .catch((err) => console.log(err))
 }
 
 process.on('unhandledRejection', (err) => {
