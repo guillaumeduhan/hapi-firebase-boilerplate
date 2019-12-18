@@ -41,12 +41,15 @@ const init = async () => {
         },
     })
     await server.start()
-    .then(() => console.log(chalk.bold(chalk.green('✅ Server ', chalk.yellow(server.info.uri)))))
+    .then(() => {
+      console.log(chalk.bgKeyword('green').bold(' SERVER LAUNCHED '))
+      console.log(chalk.bgKeyword('green').keyword('black')(chalk.bold(' ' + server.info.uri + ' ')))
+    })
     .catch((err) => console.log(err))
 }
 
 process.on('unhandledRejection', (err) => {
-    console.log(chalk.bold(chalk.red('❌ error:')))
+    console.log(chalk.bold(chalk.bgKeyword('red')('❌ error:')))
     console.log(chalk.bold(err))
     throw err
     process.exit(1)
