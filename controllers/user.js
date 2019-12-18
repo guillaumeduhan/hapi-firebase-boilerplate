@@ -29,7 +29,7 @@ exports.updateUser = async (uid, payload) => {
     password: payload.password,
   })
   .then(function(userRecord) {
-    console.log(chalk.bold(chalk.green('👍 User updated: ', userRecord)))
+    console.log(chalk.bold(chalk.magenta('👍 User updated: ', userRecord)))
     return userRecord
   })
   .catch(function(error) {
