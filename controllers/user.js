@@ -29,7 +29,6 @@ exports.updateUser = async (uid, payload) => {
     password: payload.password,
   })
   .then(function(userRecord) {
-    // See the UserRecord reference doc for the contents of userRecord.
     console.log(chalk.bold(chalk.green('👍 User updated: ', userRecord)))
     return userRecord
   })
