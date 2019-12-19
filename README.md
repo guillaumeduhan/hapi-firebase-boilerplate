@@ -1,6 +1,6 @@
 # Hapi-Firebase-Boilerplate v1.3.0.
 
-![Hapi-Firebase-Boilerplate](https://myhappyagency.com/blog/wp-content/uploads/2019/12/node_firebase_hapi.png)
+![Hapi-Firebase-Boilerplate](https://myhappyagency.com/blog/wp-content/uploads/2019/12/hapifirenode.png)
 
 Hapi Firebase boilerplate.
 Build powerful, scalable applications, with minimal overhead and full out-of-the-box functionality - your code, your way.
