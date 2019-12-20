@@ -1,6 +1,6 @@
 /*
- * hapi-mongoose boilerplate
- * 2019 Guillaume Duhan <myhappyagency@gmail.com>
+ * hapi-firebase-boilerplate
+ * 2020 Guillaume Duhan <myhappyagency@gmail.com>
  * MIT License
  */
 
@@ -9,7 +9,6 @@
  */
 
 const Hapi = require('@hapi/hapi')
-const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const chalk = require('chalk')
 const laabr = require('laabr')
