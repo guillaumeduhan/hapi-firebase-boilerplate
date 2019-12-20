@@ -19,16 +19,23 @@ module.exports = [
     method: 'PUT',
     path: '/user/update',
     handler: async (req) => {
-      console.log(req.payload)
       const user = await userController.updateUser(req.payload.uid, req.payload)
       return user
     },
   },
   {
     method: 'POST',
-    path: '/user/get',
+    path: '/user/find',
     handler: async (req) => {
-      const user = await userController.getUser(req.payload.uid)
+      const user = await userController.findUser(req.payload.uid)
+      return user
+    },
+  },
+  {
+    method: 'POST',
+    path: '/user/delete',
+    handler: async (req) => {
+      const user = await userController.deleteUser(req.payload.uid)
       return user
     },
   },
