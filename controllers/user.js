@@ -13,7 +13,7 @@ exports.createUser = async (payload) => {
     password: payload.password,
   })
   .then(function(userRecord) {
-    console.log(chalk.bold(chalk.green('👍 New user: ', userRecord.email)))
+    console.log(chalk.bold(chalk.green('👍 New user: ', JSON.stringify(userRecord))))
     return userRecord
   })
   .catch(function(error) {
@@ -22,29 +22,42 @@ exports.createUser = async (payload) => {
   })
 }
 
-exports.updateUser = async (uid, payload) => {
-  return admin.auth().updateUser(uid, {
-    email: payload.email,
-    password: payload.password,
-  })
+exports.deleteUser = async (uid) => {
+  return admin.auth().deleteUser(uid)
   .then(function(userRecord) {
-    console.log(chalk.bold(chalk.magenta('👍 User updated: ', userRecord)))
+    console.log(chalk.bold(chalk.green('👍 Successfully deleted user: ', JSON.stringify(userRecord))))
     return userRecord
   })
   .catch(function(error) {
-    console.log(chalk.bold(chalk.red('👿 Error updating user data' + error)))
+    console.log(chalk.bold(chalk.red('👿 Error deleting user: ' + error)))
+    return false
+  });
+}
+exports.findUser = async (uid) => {
+  return admin.auth().getUser(uid)
+  .then(function(userRecord) {
+    console.log(chalk.bold(chalk.green('👍 User founded: ', JSON.stringify(userRecord))))
+    return userRecord
+  })
+  .catch(function(error) {
+    console.log(chalk.bold(chalk.red('👿 Error fetching user data' + error)))
     return false
   })
 }
 
-exports.getUser = async (uid) => {
-  return admin.auth().getUser(uid)
+exports.updateUser = async (uid, payload) => {
+  return admin.auth().updateUser(uid, {
+    disabled: payload.disabled,
+    emailVerified: payload.emailVerified,
+    email: payload.email,
+    password: payload.password,
+  })
   .then(function(userRecord) {
-    console.log(chalk.bold(chalk.green('👍 User founded: ', userRecord.toJSON().email)))
-    return userRecord.toJSON();
+    console.log(chalk.bold(chalk.magenta('👌 User updated: ', JSON.stringify(userRecord))))
+    return userRecord
   })
   .catch(function(error) {
-    console.log(chalk.bold(chalk.red('👿 Error fetching user data' + error)))
+    console.log(chalk.bold(chalk.red('👿 Error updating user data' + error)))
     return false
   })
 }
