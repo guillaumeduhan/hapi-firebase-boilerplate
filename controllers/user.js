@@ -17,7 +17,7 @@ exports.createUser = async (payload) => {
     return userRecord
   })
   .catch(function(error) {
-    console.log(chalk.bold(chalk.red('👿 ' + error)))
+    console.log(chalk.bold(chalk.red('👿 Error creating user' + error)))
     return false
   })
 }
@@ -32,7 +32,7 @@ exports.updateUser = async (uid, payload) => {
     return userRecord
   })
   .catch(function(error) {
-    console.log(chalk.bold(chalk.red('👿 ' + error)))
+    console.log(chalk.bold(chalk.red('👿 Error updating user data' + error)))
     return false
   })
 }
