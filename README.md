@@ -25,9 +25,12 @@ npm run serve
 * [Hapi](https://github.com/hapijs/hapi) - The Simple, Secure Framework Developers Trust
 * [Firebase](https://www.npmjs.com/package/firebase) - Firebase provides the tools and infrastructure you need to develop, grow, and earn money from your app. This package supports web (browser), mobile-web, and server (Node.js) clients.
 
-## Versioning
+## Version
 
 We use [SemVer](http://semver.org/) for versioning.
+
+Master: light version to start.
+Full-version: heavy version with all functions.
 
 ## Authors
 
