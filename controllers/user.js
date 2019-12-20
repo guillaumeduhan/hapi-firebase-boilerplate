@@ -13,7 +13,6 @@ exports.createUser = async (payload) => {
     password: payload.password,
   })
   .then(function(userRecord) {
-    // See the UserRecord reference doc for the contents of userRecord.
     console.log(chalk.bold(chalk.green('👍 New user: ', userRecord.email)))
     return userRecord
   })
@@ -34,6 +33,18 @@ exports.updateUser = async (uid, payload) => {
   })
   .catch(function(error) {
     console.log(chalk.bold(chalk.red('👿 ' + error)))
+    return false
+  })
+}
+
+exports.getUser = async (uid) => {
+  return admin.auth().getUser(uid)
+  .then(function(userRecord) {
+    console.log(chalk.bold(chalk.green('👍 User founded: ', userRecord.toJSON().email)))
+    return userRecord.toJSON();
+  })
+  .catch(function(error) {
+    console.log(chalk.bold(chalk.red('👿 Error fetching user data' + error)))
     return false
   })
 }
