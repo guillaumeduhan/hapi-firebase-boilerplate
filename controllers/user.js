@@ -22,18 +22,3 @@ exports.createUser = async (payload) => {
     return false
   })
 }
-
-exports.updateUser = async (uid, payload) => {
-  return admin.auth().updateUser(uid, {
-    email: payload.email,
-    password: payload.password,
-  })
-  .then(function(userRecord) {
-    console.log(chalk.bold(chalk.magenta('👍 User updated: ', userRecord)))
-    return userRecord
-  })
-  .catch(function(error) {
-    console.log(chalk.bold(chalk.red('👿 ' + error)))
-    return false
-  })
-}
