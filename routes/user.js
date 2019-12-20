@@ -25,12 +25,11 @@ module.exports = [
     },
   },
   {
-    method: 'GET',
+    method: 'POST',
     path: '/user/get',
     handler: async (req) => {
-      console.log(req.payload)
-      // const user = await userController.updateUser(req.payload.uid, req.payload)
-      // return user
+      const user = await userController.getUser(req.payload.uid)
+      return user
     },
   },
 ]
