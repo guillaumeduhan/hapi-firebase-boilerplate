@@ -7,7 +7,7 @@
 const admin = require('firebase-admin')
 const chalk = require('chalk')
 
-exports.createUser = async (payload) => {
+exports.create = async (payload) => {
   return admin.auth().createUser({
     email: payload.email,
     password: payload.password,
@@ -22,7 +22,7 @@ exports.createUser = async (payload) => {
   })
 }
 
-exports.deleteUser = async (uid) => {
+exports.delete = async (uid) => {
   return admin.auth().deleteUser(uid)
   .then(function(userRecord) {
     console.log(chalk.bold(chalk.green('👍 Successfully deleted user: ', JSON.stringify(userRecord))))
@@ -34,7 +34,7 @@ exports.deleteUser = async (uid) => {
   });
 }
 
-exports.findUser = async (uid) => {
+exports.find = async (uid) => {
   return admin.auth().getUser(uid)
   .then(function(userRecord) {
     console.log(chalk.bold(chalk.green('👍 User founded: ', JSON.stringify(userRecord))))
@@ -46,7 +46,7 @@ exports.findUser = async (uid) => {
   })
 }
 
-exports.updateUser = async (uid, payload) => {
+exports.update = async (uid, payload) => {
   return admin.auth().updateUser(uid, {
     disabled: payload.disabled,
     emailVerified: payload.emailVerified,
