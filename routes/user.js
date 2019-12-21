@@ -15,7 +15,6 @@ module.exports = [
       return newUser
     },
   },
-
   {
     method: 'PUT',
     path: '/user/update',
