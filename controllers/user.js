@@ -33,6 +33,7 @@ exports.deleteUser = async (uid) => {
     return false
   });
 }
+
 exports.findUser = async (uid) => {
   return admin.auth().getUser(uid)
   .then(function(userRecord) {
