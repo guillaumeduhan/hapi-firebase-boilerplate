@@ -9,7 +9,7 @@ const chalk = require('chalk')
 const store = admin.firestore()
 const documents = store.collection('documents')
 
-exports.createDocument = async (payload) => {
+exports.create = async (payload) => {
   return documents
     .add(payload)
     .then((doc) => {
@@ -22,7 +22,7 @@ exports.createDocument = async (payload) => {
     })
 }
 
-exports.updateDocument = async (payload) => {
+exports.update = async (payload) => {
   return documents
     .doc(payload.id)
     .update(payload)
@@ -36,7 +36,7 @@ exports.updateDocument = async (payload) => {
     })
 }
 
-exports.deleteDocument = async (payload) => {
+exports.delete = async (payload) => {
   return documents
     .doc(payload.id)
     .delete()
@@ -50,7 +50,7 @@ exports.deleteDocument = async (payload) => {
     })
 }
 
-exports.removeField = async (payload) => {
+exports.remove = async (payload) => {
   return documents
     .doc(payload.id)
     .update()
