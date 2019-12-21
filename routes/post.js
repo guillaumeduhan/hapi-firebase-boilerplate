@@ -15,4 +15,20 @@ module.exports = [
       return newPost
     },
   },
+  {
+    method: 'PUT',
+    path: '/post/update',
+    handler: async (req) => {
+      const newPost = await postController.updatePost(req.payload)
+      return newPost
+    },
+  },
+  {
+    method: 'POST',
+    path: '/post/delete',
+    handler: async (req) => {
+      const newPost = await postController.deletePost(req.payload)
+      return newPost
+    },
+  },
 ]
