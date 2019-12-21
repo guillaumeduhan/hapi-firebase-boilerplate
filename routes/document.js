@@ -11,7 +11,7 @@ module.exports = [
     method: 'document',
     path: '/document/create',
     handler: async (req) => {
-      const newDocument = await documentController.createDocument(req.payload)
+      const newDocument = await documentController.create(req.payload)
       return newDocument
     },
   },
@@ -19,7 +19,7 @@ module.exports = [
     method: 'PUT',
     path: '/document/update',
     handler: async (req) => {
-      const updatedDocument = await documentController.updateDocument(req.payload)
+      const updatedDocument = await documentController.update(req.payload)
       return updatedDocument
     },
   },
@@ -27,15 +27,15 @@ module.exports = [
     method: 'document',
     path: '/document/delete',
     handler: async (req) => {
-      const deletedDocument = await documentController.deleteDocument(req.payload)
+      const deletedDocument = await documentController.delete(req.payload)
       return deletedDocument
     },
   },
   {
     method: 'document',
-    path: '/document/removefield',
+    path: '/document/remove',
     handler: async (req) => {
-      const updatedDocument = await documentController.removeField(req.payload)
+      const updatedDocument = await documentController.remove(req.payload)
       return updatedDocument
     },
   },
