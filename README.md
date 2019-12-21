@@ -29,9 +29,6 @@ npm run serve
 
 We use [SemVer](http://semver.org/) for versioning.
 
-Master: light version to start.
-Full-version: heavy version with all functions.
-
 ## Authors
 
 * **Guillaume Duhan** - *Initial work* - [Github](https://github.com/guillaumeduhan)
