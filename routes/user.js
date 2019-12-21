@@ -11,7 +11,7 @@ module.exports = [
     method: 'POST',
     path: '/user/signup',
     handler: async (req) => {
-      const newUser = await userController.createUser(req.payload)
+      const newUser = await userController.create(req.payload)
       return newUser
     },
   },
@@ -19,7 +19,7 @@ module.exports = [
     method: 'PUT',
     path: '/user/update',
     handler: async (req) => {
-      const user = await userController.updateUser(req.payload.uid, req.payload)
+      const user = await userController.update(req.payload.uid, req.payload)
       return user
     },
   },
@@ -27,7 +27,7 @@ module.exports = [
     method: 'POST',
     path: '/user/find',
     handler: async (req) => {
-      const user = await userController.findUser(req.payload.uid)
+      const user = await userController.find(req.payload.uid)
       return user
     },
   },
@@ -35,7 +35,7 @@ module.exports = [
     method: 'POST',
     path: '/user/delete',
     handler: async (req) => {
-      const user = await userController.deleteUser(req.payload.uid)
+      const user = await userController.delete(req.payload.uid)
       return user
     },
   },
