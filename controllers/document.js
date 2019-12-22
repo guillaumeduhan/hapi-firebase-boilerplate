@@ -49,17 +49,3 @@ exports.delete = async (payload) => {
       return err
     })
 }
-
-exports.remove = async (payload) => {
-  return documents
-    .doc(payload.id)
-    .update()
-    .then((doc) => {
-      console.log(chalk.bold(chalk.green('👍 Field removed on document: ', payload.id)))
-      return doc
-    })
-    .catch((err) => {
-      console.log(chalk.bold(chalk.red('👿 Error on removing field document: ' + err)))
-      return err
-    })
-}
