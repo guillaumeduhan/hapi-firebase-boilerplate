@@ -8,7 +8,7 @@ const documentController = require('../controllers/document.js')
 
 module.exports = [
   {
-    method: 'document',
+    method: 'POST',
     path: '/document/create',
     handler: async (req) => {
       const newDocument = await documentController.create(req.payload)
@@ -24,19 +24,11 @@ module.exports = [
     },
   },
   {
-    method: 'document',
+    method: 'POST',
     path: '/document/delete',
     handler: async (req) => {
       const deletedDocument = await documentController.delete(req.payload)
       return deletedDocument
-    },
-  },
-  {
-    method: 'document',
-    path: '/document/remove',
-    handler: async (req) => {
-      const updatedDocument = await documentController.remove(req.payload)
-      return updatedDocument
     },
   },
 ]
