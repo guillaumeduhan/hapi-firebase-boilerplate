@@ -1,4 +1,4 @@
-# Hapi-Firebase-Boilerplate v1.3.0.
+# Hapi Firebase Boilerplate v1.3.0.
 
 ![Hapi-Firebase-Boilerplate](https://myhappyagency.com/blog/wp-content/uploads/2019/12/hapifirenode.png)
 
