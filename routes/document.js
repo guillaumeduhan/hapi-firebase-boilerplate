@@ -1,5 +1,5 @@
 /*
- * User routes
+ * Documents routes
  */
 
 'use strict'
