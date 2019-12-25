@@ -2,7 +2,7 @@
 
 const routes = [].concat(
   require('../routes/404'),
-  require('../routes/document'),
+  require('../routes/post'),
   require('../routes/user')
 )
 
