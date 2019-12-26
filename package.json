@@ -19,6 +19,7 @@
     "eslint-config-airbnb": "^18.0.1",
     "firebase-admin": "^8.8.0",
     "laabr": "^5.1.2",
+    "lodash": "^4.17.15",
     "nodemon": "^1.19.3"
   }
 }
