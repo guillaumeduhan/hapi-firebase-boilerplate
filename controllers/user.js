@@ -6,9 +6,12 @@
 
 const admin = require('firebase-admin')
 const chalk = require('chalk')
+const _ = require('lodash')
 
 exports.create = async (payload) => {
-  return admin.auth().createUser({
+  return admin
+  .auth()
+  .createUser({
     email: payload.email,
     password: payload.password,
   })
@@ -23,7 +26,9 @@ exports.create = async (payload) => {
 }
 
 exports.delete = async (uid) => {
-  return admin.auth().deleteUser(uid)
+  return admin
+  .auth()
+  .deleteUser(uid)
   .then(function(userRecord) {
     console.log(chalk.bold(chalk.green('👍 Successfully deleted user: ', JSON.stringify(userRecord))))
     return userRecord
@@ -35,7 +40,9 @@ exports.delete = async (uid) => {
 }
 
 exports.find = async (uid) => {
-  return admin.auth().getUser(uid)
+  return admin
+  .auth()
+  .getUser(uid)
   .then(function(userRecord) {
     console.log(chalk.bold(chalk.green('👍 User founded: ', JSON.stringify(userRecord))))
     return userRecord
@@ -47,7 +54,9 @@ exports.find = async (uid) => {
 }
 
 exports.update = async (uid, payload) => {
-  return admin.auth().updateUser(uid, {
+  return admin
+  .auth()
+  .updateUser(uid, {
     disabled: payload.disabled,
     emailVerified: payload.emailVerified,
     email: payload.email,
@@ -55,10 +64,26 @@ exports.update = async (uid, payload) => {
   })
   .then(function(userRecord) {
     console.log(chalk.bold(chalk.magenta('👌 User updated: ', JSON.stringify(userRecord))))
-    return userRecord
+    return userRecord.toJSON()
   })
   .catch(function(error) {
     console.log(chalk.bold(chalk.red('👿 Error updating user data' + error)))
     return false
+  })
+}
+
+exports.get = async (payload) => {
+  return _.forEach(payload.users, (user) => {
+      admin
+      .auth()
+      .getUser(user)
+      .then(function(userRecord) {
+        console.log('Successfully fetched user data:', userRecord.toJSON());
+        return userRecord.toJSON()
+      })
+      .catch(function(error) {
+        console.log(chalk.bold(chalk.red('👌 User not found: ', user, error)))
+        return false
+      });
   })
 }
