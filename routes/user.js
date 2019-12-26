@@ -39,4 +39,12 @@ module.exports = [
       return user
     },
   },
+  {
+    method: 'POST',
+    path: '/user/get',
+    handler: async (req) => {
+      const users = await userController.get(req.payload)
+      return users
+    },
+  },
 ]
