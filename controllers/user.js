@@ -78,7 +78,7 @@ exports.get = async (payload) => {
       .auth()
       .getUser(user)
       .then(function(userRecord) {
-        console.log('Successfully fetched user data:', userRecord.toJSON());
+        console.log(chalk.bold(chalk.green('Successfully fetched user data:', userRecord.toJSON())));
         return userRecord.toJSON()
       })
       .catch(function(error) {
