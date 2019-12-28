@@ -1,7 +1,7 @@
 {
   "name": "Hapi-Firebase-Boilerplate",
   "version": "1.3.0",
-  "description": "Hapi-Firebase-Boilerplate by Guillaume Duhan, 2019.",
+  "description": "Hapi-Firebase-Boilerplate by Guillaume Duhan, 2020.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
