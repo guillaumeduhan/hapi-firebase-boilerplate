@@ -4,10 +4,6 @@
  * MIT License
  */
 
-/**
- * Module dependencies
- */
-
 const Hapi = require('@hapi/hapi')
 const dotenv = require('dotenv')
 const chalk = require('chalk')
