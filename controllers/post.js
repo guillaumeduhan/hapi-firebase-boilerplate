@@ -7,6 +7,7 @@
 const admin = require('firebase-admin')
 const store = admin.firestore()
 const posts = store.collection('posts')
+
 exports.create = async (payload) => {
   return posts
     .add(payload)
